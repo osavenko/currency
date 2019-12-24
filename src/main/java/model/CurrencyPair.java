@@ -1,17 +1,17 @@
 package model;
 
 public class CurrencyPair {
-    private Currency firstCurrency = null;
+    private Currency baseCurrency = null;
     private Currency secondCurrency = null;
-    private long buy;
-    private long sell;
+    private float buy;
+    private float sale;
 
-    public Currency getFirstCurrency() {
-        return firstCurrency;
+    public Currency getBaseCurrency() {
+        return baseCurrency;
     }
 
-    public void setFirstCurrency(Currency firstCurrency) {
-        this.firstCurrency = firstCurrency;
+    public void setBaseCurrency(Currency baseCurrency) {
+        this.baseCurrency = baseCurrency;
     }
 
     public Currency getSecondCurrency() {
@@ -22,7 +22,7 @@ public class CurrencyPair {
         this.secondCurrency = secondCurrency;
     }
 
-    public long getBuy() {
+    public float getBuy() {
         return buy;
     }
 
@@ -30,21 +30,26 @@ public class CurrencyPair {
         this.buy = buy;
     }
 
-    public long getSell() {
-        return sell;
+    public float getSale() {
+        return sale;
     }
 
-    public void setSell(long sell) {
-        this.sell = sell;
+    public void setSale(long sale) {
+        this.sale = sale;
     }
 
     public CurrencyPair() {
     }
 
-    public CurrencyPair(Currency firstCurrency, Currency secondCurrency, long buy, long sell) {
-        this.firstCurrency = firstCurrency;
+    public CurrencyPair(Currency firstCurrency, Currency secondCurrency, float buy, float sale) {
+        this.baseCurrency = firstCurrency;
         this.secondCurrency = secondCurrency;
         this.buy = buy;
-        this.sell = sell;
+        this.sale = sale;
+    }
+
+    @Override
+    public String toString() {
+        return secondCurrency+" -> "+baseCurrency+": buy("+getBuy()+"), sale("+getSale()+")";
     }
 }
