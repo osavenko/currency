@@ -1,15 +1,22 @@
 import command.CommandExecuter;
 import command.Operation;
-import command.OschadBankCommand;
-import model.AvalBank;
-import model.CurrencyPair;
-import model.OschadBank;
-import model.PrivateBank;
+import exeption.InterruptOperationException;
 
-import java.util.List;
+import java.io.IOException;
+
 
 public class main {
     public static void main(String[] args) {
-        CommandExecuter.execute(Operation.KURS_OSCHADBANK);
+        try {
+            Operation requiredOperation = null;
+            do {
+                ConsoleHelper.printMenu();
+                requiredOperation = ConsoleHelper.getOperation();
+                CommandExecuter.execute(requiredOperation);
+            } while (requiredOperation != Operation.EXIT);
+        }catch (IOException ignore){} catch (InterruptOperationException e) {
+            e.printStackTrace();
+        }
+
     }
 }
