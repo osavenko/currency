@@ -10,6 +10,7 @@ public class CommandExecuter {
         allCommand.put(Operation.KURS_PRIVATEBANK, new PrivateBankCommand());
         allCommand.put(Operation.KURS_OSCHADBANK, new OschadBankCommand());
         allCommand.put(Operation.KURS_AVALBANK, new AvalBankCommand());
+        allCommand.put(Operation.EXIT, new ExitCommand());
     }
     private CommandExecuter(){}
     public static void execute(Operation operation){
