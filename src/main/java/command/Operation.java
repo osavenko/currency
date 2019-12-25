@@ -1,4 +1,6 @@
-import exxeption.InterruptOperationException;
+package command;
+
+import exeption.InterruptOperationException;
 
 public enum Operation {
     KURS_PRIVATEBANK,

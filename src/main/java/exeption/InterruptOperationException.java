@@ -1,4 +1,4 @@
-package exxeption;
+package exeption;
 
 public class InterruptOperationException extends Exception {
 }
