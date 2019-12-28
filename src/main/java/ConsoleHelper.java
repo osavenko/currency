@@ -11,6 +11,7 @@ public class ConsoleHelper {
         System.out.println("1 - Курсы валют Приватбанка.");
         System.out.println("2 - Курсы валют Ощадбанка.");
         System.out.println("3 - Курсы валют Аваль.");
+        System.out.println("4 - Курсы другого бвнка.");
         System.out.println("exit - ДЛЯ ВЫХОДА.");
         System.out.print("[]->");
     }
@@ -22,7 +23,7 @@ public class ConsoleHelper {
             if (input.toLowerCase().equals("exit")) {
                 return Operation.EXIT;
             }
-            if (input.matches("[1-3]")){
+            if (input.matches("[1-4]")){
                 break;
             }
         }
